@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'pry-rails'
-gem 'bootstrap'
+
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 
 gem 'paperclip', '~> 5.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
