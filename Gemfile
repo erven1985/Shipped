@@ -2,9 +2,12 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'pry-rails'
+
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+
+gem 'paperclip', '~> 5.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
