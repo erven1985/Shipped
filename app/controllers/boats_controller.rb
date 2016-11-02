@@ -31,7 +31,7 @@ class BoatsController < ApplicationController
 
   	@boat.update({
   		name: params[:boat][:name],
-  		location: params[:location],
+  		location: params[:boat][:location],
   		container: params[:boat][:container]
   	})
 
