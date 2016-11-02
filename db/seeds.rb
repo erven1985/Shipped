@@ -20,9 +20,10 @@
 
   @job = Job.new(name: "shipment", destination:"nyc", origin:"england", price: 500, description: "livebird", container: 5)
 
-  @job.boat_id = @boat.id
+  # @job.boat_id = @boat.id
 
   @job.save!
 
-  @boat.job_id = @job.id
+  @boat.jobs << @job
 
+  
