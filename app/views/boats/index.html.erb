@@ -1,9 +1,12 @@
-
+<div class="indexForm">
+<h2 id="indexTitle"> View All Boats Here </h2>
 <% @boats.each do |boat| %>
-	Name: <%= boat.name %> <br><br>
+	<div class="formFields">
+	<br><br> Name: <%= boat.name %> <br><br>
 	Location: <%= boat.location %> <br><br>
 	Available Containers: <%= boat.container %>
+	</div>
 <% end %>
-
+</div>
 
 

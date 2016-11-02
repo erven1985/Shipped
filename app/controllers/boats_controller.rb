@@ -11,14 +11,14 @@ class BoatsController < ApplicationController
   end
 
   def create
-  	@boat = Boat.new(boat_params)
+  	@boat = Boat.new({
+  		name: params[:boat][:name],
+  		location: params[:location],
+  		container: params[:boat][:container]
+  	})
   	@user = User.find_by_id(current_user.id)
-    @use = User.first
-   
-    puts @user
-
+  	p @boat
   	@boat.user = @user
-  	# @boat.save
 
   		if @boat.save
   			redirect_to boats_path
@@ -27,10 +27,23 @@ class BoatsController < ApplicationController
 
   def edit
   	# to do: make form to assign boats to jobs
+  	@boat = Boat.find(params[:id])
   end
 
   def update
-  	
+  	@boat = Boat.find(params[:id])
+
+  	@boat.update({
+  		name: params[:boat][:name],
+  		location: params[:location],
+  		container: params[:boat][:container]
+  	})
+
+  	if (@boat)
+  		redirect_to url_for(:controller => :boats, :action => :index)
+  	else
+  		redirect_to url_for(:controller => :boats, :action => :edit)
+  	end
   end
 
   def show
@@ -42,11 +55,11 @@ class BoatsController < ApplicationController
   end
 
 
-  private
+  # private
 
-  def boat_params
-  	params.require(:boat).permit(:name, :location, :container)
-  end
+  # def boat_params
+  # 	params.require(:boat).permit(:name, :location, :container)
+  # end
 
 end
 
