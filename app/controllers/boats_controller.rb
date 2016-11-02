@@ -11,11 +11,7 @@ class BoatsController < ApplicationController
   end
 
   def create
-  	@boat = Boat.new({
-  		name: params[:boat][:name],
-  		location: params[:location],
-  		container: params[:boat][:container]
-  	})
+  	@boat = Boat.new(boat_params)
   	@user = User.find_by_id(current_user.id)
   	p @boat
   	@boat.user = @user
@@ -48,6 +44,8 @@ class BoatsController < ApplicationController
 
   def show
   	# to do: be able to show a single boat and its job or availability
+  	@boat = Boat.find(params[:id])
+
   end
 
   def delete
@@ -55,11 +53,11 @@ class BoatsController < ApplicationController
   end
 
 
-  # private
+  private
 
-  # def boat_params
-  # 	params.require(:boat).permit(:name, :location, :container)
-  # end
+  def boat_params
+  	params.require(:boat).permit(:name, :location, :container)
+  end
 
 end
 
