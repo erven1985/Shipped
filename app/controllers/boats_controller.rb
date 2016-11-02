@@ -13,10 +13,9 @@ class BoatsController < ApplicationController
   def create
   	@boat = Boat.new(boat_params)
   	@boat.save
-  	if @boat.save
-  		redirect_to boats_path(@boat)
-  	
-end
+  		if @boat.save
+  			redirect_to boats_path(@boat)
+		end
   end
 
   def edit
@@ -42,29 +41,7 @@ end
   	params.require(:boat).permit(:name, :location, :container)
   end
 
-
-
-
-
-
-
-
-
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
