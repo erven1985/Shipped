@@ -5,11 +5,12 @@
 		
 		<%= f.label :name %>: <br>
 		<%= f.text_field :name %> <br>
+		<%= f.label "Number of Containers" %>: <br>
+		<%= f.text_field :container %> <br>
 		<%= f.label :location %>: <br>
 		<%= hidden_field_tag 'user', 2 %>
 		<%= select_tag(:location, options_for_select([["Thor's Well, Oregon, USA", "Thor's Well, Oregon, USA"], ["The Bermuda Triangle, North Atlantic Ocean", "The Bermuda Triangle, North Atlantic Ocean"], ["Whale Bone Alley, Siberia", "Whale Bone Alley, Siberia"], ["The Giant's Causeway, Northern Ireland", "The Giant's Causeway, Northern Ireland"], ["Hvitserkur, Northern Iceland", "Hvitserkur, Northern Ireland"], ["Algarve, Portugal", "Algarve, Portugal"], ["Rio de Janiero, Brazil", "Rio de Janeiro, Brazil"], ["Galapagos Islands, Ecuador", "Galapagos Islands, Ecuador"], ["Queensland, Australia", "Queensland, Australia"], ["Benoa (Bali), Indonesia", "Benoa (Bali), Indonesia"], ["New York, NY, USA", "New York, NY, USA"], ["New Haven, CT, USA", "New Haven, CT, USA"]])) %> <br>
-		<%= f.label :container %>: <br>
-		<%= f.text_field :container %> <br><br>
+		<br>
 	</div>
 		<%= f.submit "Create New Boat" %>
 	<% end %>
