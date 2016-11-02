@@ -14,3 +14,40 @@
  *= require_self
   *= require bootstrap_and_overrides
  */
+/*
+ul.nav a:hover { color: #fff !important; }
+ul.nav a { color: #000 !important; }
+
+.navbar-default {
+	background-color: #204b57;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #FFF;
+}
+
+.navbar-default .navbar-nav ul > li > a:hover,
+.navbar-default .navbar-nav ul > li > a:focus {
+    color: #AA0000;
+}
+.brandy {
+	color: white;
+}*/
+.nav.navbar-nav li a {
+    color: #000;
+}
+.nav.navbar-nav li a:hover {
+    color: #fff;
+}
+.navbar-default.navbar-brand a {
+    color: #000;
+}
+.navbar-default.navbar-brand a:hover {
+    color: #fff;
+}
+.navbar-default {
+  background-color:teal;
+  background-image: none;
+  background-repeat: no-repeat;
+ }
