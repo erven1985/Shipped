@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
+    has_many :boats
 	has_attached_file :avatar,
  	:styles => { :medium => "300x300>", :thumb => "200x200>" },
  	:default_url => "/images/missing.png"
