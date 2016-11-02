@@ -12,10 +12,17 @@ class BoatsController < ApplicationController
 
   def create
   	@boat = Boat.new(boat_params)
-  	@boat.save
-  		if @boat.save
-  			redirect_to boats_path(@boat)
-		end
+  	@user = User.find_by_id(current_user.id)
+    @use = User.first
+   
+    puts @user
+
+  	@boat.user = @user
+  	@boat.save!
+  	head :no_content
+  # 		if @boat.save
+  # 			redirect_to boats_path(@boat)
+		# end
   end
 
   def edit
