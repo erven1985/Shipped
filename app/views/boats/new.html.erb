@@ -1,0 +1,13 @@
+
+
+	<%= form_for @boat do |f| %>
+	<div class="formField">
+		<%= f.label :name %>: <br>
+		<%= f.text_field :name %> <br>
+		<%= f.label :location %>: <br>
+		<%= f.text_field :location %> <br>
+		<%= f.label :container %>: <br>
+		<%= f.text_field :container %> <br><br>
+	</div>
+		<%= f.submit "Create New Boat" %>
+	<% end %>
