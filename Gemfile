@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'pry-rails'
 
+gem 'sprockets', '3.6.3'
+
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
