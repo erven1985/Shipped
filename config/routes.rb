@@ -7,7 +7,9 @@ get '/'  => 'welcome#index',  as: 'root_user'
 
 
 	 resources :boats
+
      resources :jobs
+
 
 
 

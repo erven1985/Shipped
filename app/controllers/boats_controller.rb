@@ -18,11 +18,11 @@ class BoatsController < ApplicationController
     puts @user
 
   	@boat.user = @user
-  	@boat.save!
-  	head :no_content
-  # 		if @boat.save
-  # 			redirect_to boats_path(@boat)
-		# end
+  	# @boat.save
+
+  		if @boat.save
+  			redirect_to boats_path
+		end
   end
 
   def edit

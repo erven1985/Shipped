@@ -1,9 +1,9 @@
 class JobsController < ApplicationController
 
 
-def show
+def new
 
-@message
+@message = "what is up"
 
 end
 

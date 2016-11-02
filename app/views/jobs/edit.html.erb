@@ -1,9 +1,3 @@
-
-
-
-<h1><%=@message%></h1>
-
-
 	<%= form_for @job do |f| %>
 	<div class="formField">
 		<%= f.label :name %>: <br>
@@ -19,6 +13,5 @@
 		<%= f.label :price %>: <br>
 		<%= f.text_field :price %> <br>
 	</div>
-		<%= f.submit "Create New Job" %>
+		<%= f.submit "Update Job" %>
 	<% end %>
-
