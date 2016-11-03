@@ -2,4 +2,6 @@
 	Name: <%= @boat.name %><br>
 	Location: <%= @boat.location %><br>
 	Container Capacity: <%= @boat.container %><br>
+	<%=link_to 'Edit', edit_boat_path(params[:id]) %>
+	<%= link_to 'Delete',  { action: :destroy, id: @boat.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
