@@ -1,4 +1,4 @@
-
+<% if current_user.user_type == "Job" %>
 
 
 <h1><%=@message%></h1>
@@ -21,4 +21,10 @@
 	</div>
 		<%= f.submit "Create New Job" %>
 	<% end %>
+
+<% else %>
+
+<h1>Error: You do not have access to view this page</h1>
+
+<% end %>
 
