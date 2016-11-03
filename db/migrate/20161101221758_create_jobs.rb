@@ -8,7 +8,8 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.integer :container
       t.float :price
       t.integer :boat_id
-      t.timestamps
+      t.integer :user_id
+      t.timestamps :time_created
     end
   end
 end

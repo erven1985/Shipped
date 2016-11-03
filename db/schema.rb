@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20161102194232) do
     t.integer  "user_id"
     t.string   "name"
     t.integer  "container"
+    t.string   "location"
     t.integer  "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20161102194232) do
     t.integer  "container"
     t.float    "price"
     t.integer  "boat_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
