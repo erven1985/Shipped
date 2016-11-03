@@ -1,3 +1,4 @@
+<% if current_user.user_type == "Shipping" %>
 
 <div class="indexForm">
 <h2 id="indexTitle"> View All Boats Here </h2>
@@ -11,4 +12,14 @@
 		<a href="boats/<%= boat.id%>">View This Ship</a>
 	</div>
 <% end %>
+
 </div>
+
+
+
+<% else %>
+
+	<h1>Error: You do not have access to view this page</h1>
+
+<% end %>
+

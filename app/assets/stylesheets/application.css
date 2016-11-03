@@ -35,6 +35,8 @@ body {
   background-color: #2c4251;
   background-image: none;
   background-repeat: no-repeat;
+  padding-bottom: 10px;
+  padding-top: 10px;
  }
 .jobsy {
   border: 1px solid #e7e7e7;
@@ -94,3 +96,20 @@ body {
     color: #ffffff;
     background-color: #00b3db;
 }
+
+#email_login {
+  position: absolute;
+  left: 61%;
+}
+
+#password_login {
+  position: absolute;
+  left: 75%;
+}
+
+#login_button {
+  position: absolute;
+  left: 89%;
+  top: 36px;
+}
+
