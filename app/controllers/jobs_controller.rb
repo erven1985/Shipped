@@ -52,3 +52,4 @@ def index
   def boat_params
    params.require(:job).permit(:name, :description, :origin, :destination, :container, :price)
   end
+end
