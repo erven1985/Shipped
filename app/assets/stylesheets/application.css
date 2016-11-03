@@ -12,42 +12,85 @@
  *
  *= require_tree .
  *= require_self
-  *= require bootstrap_and_overrides
+ *= require bootstrap_and_overrides
  */
-/*
-ul.nav a:hover { color: #fff !important; }
-ul.nav a { color: #000 !important; }
 
-.navbar-default {
-	background-color: #204b57;
+body {
+  background-color: #fdfffc;
 }
-.navbar-default .navbar-brand,
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #FFF;
-}
-
-.navbar-default .navbar-nav ul > li > a:hover,
-.navbar-default .navbar-nav ul > li > a:focus {
-    color: #AA0000;
-}
-.brandy {
-	color: white;
-}*/
 .nav.navbar-nav li a {
-    color: #000;
+  font-family: 'Roboto', sans-serif;
+  color: #bababa;
 }
 .nav.navbar-nav li a:hover {
-    color: #fff;
+  color: #ffffff
 }
 .navbar-default.navbar-brand a {
-    color: #000;
+  color: #000000;
 }
 .navbar-default.navbar-brand a:hover {
-    color: #fff;
+  color: #ffffff;
 }
 .navbar-default {
-  background-color:teal;
+  background-color: #2c4251;
   background-image: none;
   background-repeat: no-repeat;
  }
+.jobsy {
+  border: 1px solid #e7e7e7;
+  background-color: #2c4251;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.joberugen {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  padding: 10px;
+  padding-top: 0;
+  color: #ffffff;
+}
+.jobery {
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #e7e7e7;
+  background-color: #ffffff;
+}
+.slogan {
+  font-family: 'Roboto', sans-serif;
+  font-size: 64px;
+}
+.main-bar {
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  padding: 10px;
+  background-image: none;
+  background-repeat: no-repeat;
+}
+.footer-bar {
+  background-color: #2c4251;
+}
+.btn-github {
+    color: #ffffff;
+    background-color: #197bbd;
+    border-color: #357ebd; /*set the color you want here*/
+}
+.btn-github:hover, .btn-github:focus, .btn-github:active, .btn-github.active, .open>.dropdown-toggle.btn-github {
+    color: #ffffff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
+.cc {
+    color: #0495c9;
+}
+.cc:hover, .cc:focus, .cc:active, .cc.active, .open>.dropdown-toggle.cc {
+    color: #00b3db;
+    text-decoration: none;
+}
+.jobsy-more {
+  color: #ffffff;
+  background-color: #197bbd;
+}
+.jobsy-more:hover, .jobsy-more:focus, .jobsy-more:active, .jobsy-more.active, .open>.dropdown-toggle.cjobsy-more {
+    color: #ffffff;
+    background-color: #00b3db;
+}
