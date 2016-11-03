@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "ShippedGroupProject" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Shipped Group Project" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -66,10 +66,15 @@
           <div class="well sidebar-nav text-center jobsy">
             <!-- <h3>Recent jobs</h3> -->
             <ul class="nav nav-list">
+              
+             
+
+
+
               <li class="nav-header joberugen">Recent Jobs</li>
-              <li class="jobery" style="color: #000000"><%= link_to "test 1", "/jobs/1"  %></li>
-              <li class="jobery" style="color: #000000"><%= link_to "test 2", "/test/2"  %></li>
-              <li class="jobery" style="color: #000000"><%= link_to "test 3", "/test/3"  %></li>
+              <%@last.reverse.each do |l| %>
+              <li class="jobery" style="color: #000000"><%= link_to l.name, '/jobs/'+(l.id).to_s  %></li>
+              <%end%>
             </ul><br/>
             <a href="/jobs"><button class="btn jobsy-more">View More</button></a>
           </div><!--/.well -->
