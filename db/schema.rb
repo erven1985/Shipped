@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20161103031829) do
     t.integer  "container"
     t.float    "price"
     t.integer  "boat_id"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
