@@ -5,17 +5,14 @@ def index
    # to do: display all jobs 
   @jobs = Job.all
   @user = User.find(current_user.id)
-  params[:id] = current_user.id 
-  params[:job_id] = Job.last
+  @job = @user.jobs
 
-if @job_current.nil?
-  # @job_current = Job.find(params[:job_id])
-end
+  # if @job != nil
+  #   # @job_current = Job.find(params[:job_id])
+  # end
   	
   @jobs = Job.where(user_id: current_user.id)
- 
-
-  end
+ end
 
   def new
    @job = Job.new
@@ -37,7 +34,7 @@ end
 
   def update
    @user = User.find_by_id(current_user.id)
-    @job = Job.update(job_params)
+    @job = Job.find(params[:id]).update(job_params)
        redirect_to url_for(:controller => :jobs, :action => :index)
   end
 
