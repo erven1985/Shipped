@@ -38,7 +38,7 @@ end
   def update
    @user = User.find_by_id(current_user.id)
     @job = Job.update(job_params)
-       redirect_to '/jobs'
+       redirect_to url_for(:controller => :jobs, :action => :index)
   end
 
   def show
