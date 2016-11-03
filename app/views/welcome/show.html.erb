@@ -1,0 +1,12 @@
+
+<div class="indexForm">
+<h2 id="indexTitle"> My Transaction History </h2>
+	<div class="formFields">
+			<br>First Name: <%= @user.firstname %> <br>
+					Last Name: <%= @user.lastname %> <br>
+					Username: <%= @user.username %> <br>
+					Date of birth: <%= @user.dob %> <br>
+					Gender: <%= @user.gender %> <br>
+		<%= image_tag @user.avatar.url(:thumb), class: "prof_img" %><br>
+	</div>
+</div>
