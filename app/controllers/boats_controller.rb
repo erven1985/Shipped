@@ -15,9 +15,8 @@ class BoatsController < ApplicationController
   	@user = User.find_by_id(current_user.id)
   	p @boat
   	@boat.user = @user
-
-  		if @boat.save
-  			redirect_to boats_path
+  	if @boat.save
+  		redirect_to boats_path
 		end
   end
 
@@ -28,13 +27,11 @@ class BoatsController < ApplicationController
 
   def update
   	@boat = Boat.find(params[:id])
-
   	@boat.update({
   		name: params[:boat][:name],
   		location: params[:boat][:location],
   		container: params[:boat][:container]
   	})
-
   	if (@boat)
   		redirect_to url_for(:controller => :boats, :action => :index)
   	else
@@ -45,17 +42,16 @@ class BoatsController < ApplicationController
   def show
   	# to do: be able to show a single boat and its job or availability
   	@boat = Boat.find(params[:id])
-
   end
 
   def destroy
-  	# to do: be able to delete a boat from all boats collection
-  @boat = Boat.find(params[:id])   
-  @boat.destroy
-  if @boat 
-  redirect_to url_for(:controller => :boats, :action => :index)
+    # to do: be able to delete a boat from all boats collection
+    @boat = Boat.find(praams[:id])   
+    @boat.destroy
+    if @boat 
+      redirect_to url_for(:controller => :boats, :action => :index)
+    end
   end
-end
 
   private
 
@@ -64,6 +60,3 @@ end
   end
 
 end
-
-
-
