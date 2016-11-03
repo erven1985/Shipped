@@ -1,19 +1,17 @@
 <h2>Available Jobs</h2>
 
-<% if !@jobs %>
-	<h4>You have not logged any jobs</h4>
+<% if !@job.empty? %>
+<%=link_to 'Add new', new_job_path() %><br><br>
+	<% @jobs.reverse.each do |b|%>
+		Name: <%= b.name %> <br>
+		Description: <%= b.description %> <br>
+		Origin: <%= b.origin %> <br>
+		Destination: <%= b.destination %> <br>
+		Container Count: <%= b.container %> <br>
+		Price: <%= b.price %> <br>
+		<a href="/jobs/<%= b.id%>">View Job</a><br><br>
+	<% end %>
 <% else %>
-<%=link_to 'Add new', new_job_path() %><br>
-<% @jobs.reverse.each do |b|%>
-	
-	<a href="/jobs/<%= b.id%>">
-	Name: <%= b.name %> <br>
-	Description: <%= b.description %> <br>
-	Origin: <%= b.origin %> <br>
-	Destination: <%= b.destination %> <br>
-	Container Count: <%= b.container %> <br>
-	Price: <%= b.price %> <br><br>
-	</a>
-	
-<% end %>
-<% end %>
+		<h4>You have not logged any jobs</h4>
+		<%=link_to 'Add new', new_job_path() %><br><br>
+	<% end %>
