@@ -9,7 +9,7 @@
 			<%= link_to 'Delete',  { action: :destroy, id: @boat.id }, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-success btn btn-github" %>
 			<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@boat.latitude},#{@boat.longitude}&markers=#{@boat.latitude},#{@boat.longitude}&zoom=7&size=500x242&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
 		              class: 'img-fluid img-rounded', alt: "#{@boat.location} on the map", id:"map" %><br><br>
-		             <%= Geocoder::Calculations.distance_between([@boat.latitude,@boat.longitude], [@job.latitude,@job.longitude]).round(2) %> miles
+		             Distance: <%= Geocoder::Calculations.distance_between([@boat.latitude,@boat.longitude], [@job.latitude,@job.longitude]).round(2) %> miles
 
 		</div>
 	</div>
