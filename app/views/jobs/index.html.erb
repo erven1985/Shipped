@@ -1,17 +1,17 @@
 <h2>Available Jobs</h2>
 
 <% if !@job.empty? %>
-<%=link_to 'Add new', new_job_path() %><br><br>
+<%=link_to 'Add new', new_job_path(), :class=>"btn-success btn btn-github" %><br><br>
 	<% @jobs.reverse.each do |b|%>
 		Name: <%= b.name %> <br>
 		Description: <%= b.description %> <br>
 		Origin: <%= b.origin %> <br>
 		Destination: <%= b.destination %> <br>
 		Container Count: <%= b.container %> <br>
-		Price: <%= b.price %> <br>
-		<a href="/jobs/<%= b.id%>">View Job</a><br><br>
+		Price: <%= b.price %> <br/><br/>
+		<a class="btn-success btn btn-github" href="/jobs/<%= b.id%>">View Job</a><br><br>
 	<% end %>
 <% else %>
 		<h4>You have not logged any jobs</h4>
-		<%=link_to 'Add new', new_job_path() %><br><br>
+		<%=link_to 'Add new', new_job_path(), :class=>"btn-success btn btn-github" %><br><br>
 	<% end %>
