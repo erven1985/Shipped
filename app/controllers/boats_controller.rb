@@ -45,6 +45,7 @@ class BoatsController < ApplicationController
   def show
   	# to do: be able to show a single boat and its job or availability
   	@boat = Boat.find(params[:id])
+    @job = Job.first
 
   end
 
