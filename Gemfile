@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'geocoder'
 gem 'devise'
 gem 'pry-rails'
 gem 'sprockets', '3.6.3'

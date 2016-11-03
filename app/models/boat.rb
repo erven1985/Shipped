@@ -10,6 +10,9 @@ class Boat < ApplicationRecord
 
 	validates_attachment_content_type :avatar,
  	:content_type => /\Aimage\/.*\Z/
+
+ 	geocoded_by :location
+ 	after_validation :geocode
  	
 
 end
