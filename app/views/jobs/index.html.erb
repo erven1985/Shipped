@@ -3,13 +3,17 @@
 <% if !@jobs %>
 	<h4>You have not logged any jobs</h4>
 <% else %>
+<%=link_to 'Add new', new_job_path() %><br>
 <% @jobs.reverse.each do |b|%>
+	
+	<a href="/jobs/<%= b.id%>">
 	Name: <%= b.name %> <br>
 	Description: <%= b.description %> <br>
 	Origin: <%= b.origin %> <br>
 	Destination: <%= b.destination %> <br>
 	Container Count: <%= b.container %> <br>
-	Price: <%= b.price %> <br>
-	<%= link_to "Edit Job", edit_job_path(b.id) %> <%= link_to "Delete", job_path(@job_current), :confirm => "Are you sure?", :method => :delete %> <br>
+	Price: <%= b.price %> <br><br>
+	</a>
+	
 <% end %>
 <% end %>

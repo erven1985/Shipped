@@ -9,7 +9,7 @@ def index
   params[:job_id] = Job.last
 
 if @job_current.nil?
-  @job_current = Job.find(params[:job_id])
+  # @job_current = Job.find(params[:job_id])
 end
   	
   @jobs = Job.where(user_id: current_user.id)
@@ -32,8 +32,7 @@ end
  end
 
  def edit
-   params[:job_id] = Job.last
-   @job = Job.find(params[:job_id])
+   @job = Job.find(params[:id])
   end
 
   def update
@@ -44,12 +43,14 @@ end
 
   def show
    # to do: be able to show a single boat and its job or availability
+   @job = Job.find(params[:id])
+
  end
 
  def destroy
   @job = Job.find(params[:id])
   @job.destroy
-    redirect_to '/'
+    redirect_to '/jobs'
   end
 
 

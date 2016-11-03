@@ -1,0 +1,15 @@
+<div class="showField">
+	Name: <%= @job.name %><br>
+	Description: <%= @job.description %><br>
+	Origin: <%= @job.origin %><br>
+	Destination: <%= @job.destination %> <br>
+	Container Count: <%= @job.container %> <br>
+	Price: <%= @job.price %> <br><br>
+	<%=link_to 'Edit', edit_job_path(params[:id]) %>
+	<%= link_to 'Delete',  { action: :destroy, id: @job.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+
+
+
+	
+	
