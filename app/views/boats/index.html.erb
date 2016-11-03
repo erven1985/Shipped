@@ -1,17 +1,14 @@
 
 <div class="indexForm">
 <h2 id="indexTitle"> View All Boats Here </h2>
-<%=link_to 'Add new', new_boat_path() %><br>
+<%=link_to 'Add new', new_boat_path(), :class=>"btn-success btn btn-github" %><br>
 <% @boats.each do |boat| %>
 	<div class="formFields">
-		<a href="boats/<%= boat.id%>">
 			<br> Name: <%= boat.name %> <br><br>
 					Location: <%= boat.location %> <br><br>
-					Available Containers: <%= boat.container %>
-		</a>
-		<%= image_tag boat.avatar.url(:thumb) %>
+					Available Containers: <%= boat.container %><br><br>		
+		<%= image_tag boat.avatar.url(:thumb) %><br>
+		<a href="boats/<%= boat.id%>">View This Ship</a>
 	</div>
 <% end %>
 </div>
-
-
