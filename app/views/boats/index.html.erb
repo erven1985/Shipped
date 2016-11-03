@@ -1,7 +1,7 @@
 
 <div class="indexForm">
 <h2 id="indexTitle"> View All Boats Here </h2>
-<%=link_to 'Add new', new_boat_path() %><br>
+<%=link_to 'Add new', new_boat_path(), :class=>"btn-success btn btn-github" %><br>
 <% @boats.each do |boat| %>
 	<div class="formFields">
 		<a href="boats/<%= boat.id%>">
@@ -13,5 +13,3 @@
 	</div>
 <% end %>
 </div>
-
-
