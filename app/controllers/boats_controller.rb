@@ -46,7 +46,7 @@ class BoatsController < ApplicationController
 
   def destroy
     # to do: be able to delete a boat from all boats collection
-    @boat = Boat.find(praams[:id])   
+    @boat = Boat.find(params[:id])   
     @boat.destroy
     if @boat 
       redirect_to url_for(:controller => :boats, :action => :index)
