@@ -1,3 +1,23 @@
 // Place all the styles related to the job controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.op {
+    position: relative;
+    left: 100px;
+    bottom: 250px;
+}
+
+
+#submit_job {
+
+    display: none;
+    position:relative;
+    top: 24px;
+    left: 225px;
+}
+
+#optjob {
+
+    display: none;
+}

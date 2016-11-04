@@ -1,11 +1,17 @@
 <h2>Available Jobs</h2>
-<% @user.jobs.reverse.each do |b|%>
-	Name: <%= job.name %> <br>
-	Description: <%= job.description %> <br>
-	Origin: <%= job.origin %> <br>
-	Destination: <%= job.destination %> <br>
-	Container Count: <%= job.container %> <br>
-	Price: <%= job.price %> <br>
-	<%= link_to "Edit Job", edit_job_path, id:"editjob" %> <%= link_to 'Delete Job', post_path(b.id),
-    data: {:confirm => 'Are you sure?'}, :method => :delete %>
-<% end %>
+
+<% if !@job.empty? %>
+<%=link_to 'Add new', new_job_path() %><br><br>
+	<% @jobs.reverse.each do |b|%>
+		Name: <%= b.name %> <br>
+		Description: <%= b.description %> <br>
+		Origin: <%= b.origin %> <br>
+		Destination: <%= b.destination %> <br>
+		Container Count: <%= b.container %> <br>
+		Price: <%= b.price %> <br>
+		<a href="/jobs/<%= b.id%>">View Job</a><br><br>
+	<% end %>
+<% else %>
+		<h4>You have not logged any jobs</h4>
+		<%=link_to 'Add new', new_job_path() %><br><br>
+	<% end %>
