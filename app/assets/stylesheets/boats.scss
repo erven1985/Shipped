@@ -1,3 +1,11 @@
+#indexTitle{
+	text-align: center;
+}
+#map {
+	position:absolute;
+	top: -20px;
+	left: 300px;
+}
 .formFields{
 	border: 1px solid lightgrey;
 	width: 250px;
@@ -8,14 +16,7 @@
 	position: relative;
 	display: inline-block;
 }
-
-#indexTitle{
-	text-align: center;
-}
-
-.indexForm{}
-
-.showField{
+.showField {
 	border: 1px solid lightgrey;
 	width: 250px;
 	text-align: center;
@@ -25,9 +26,4 @@
 	position: relative;
 	display: inline-block;
 }
-
-#map {
-	position:absolute;
-	top: -20px;
-	left: 300px;
-}
+.indexForm {}
