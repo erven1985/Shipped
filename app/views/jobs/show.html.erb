@@ -1,9 +1,4 @@
-
-<% content_for :title, "Job - [" + @job.name + "]"%>
-
 <% if current_user.user_type == "Job" %>
-
-
 <div class="showField">
 	Name: <%= @job.name %><br>
 	Description: <%= @job.description %><br>
