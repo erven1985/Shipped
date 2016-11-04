@@ -15,15 +15,19 @@ class JobsController < ApplicationController
     @job = Job.new
   end
 
-  def create
-    @user = User.find_by_id(current_user.id)
-    @job = Job.new(job_params)
-    @job.user = @user
-    @job.save
-    if @job.save
-      redirect_to '/jobs'
-    end
+
+def create
+ @boat = Boat.find_by(name: params[:selected])
+ @user = User.find_by_id(current_user.id)
+ @job = Job.new(job_params)
+ @job.user = @user
+ @job.save
+ @boat.jobs << @job
+  if @job.save
+   redirect_to '/jobs'
   end
+end
+
 
   def edit
     @job = Job.find(params[:id])
@@ -37,8 +41,7 @@ class JobsController < ApplicationController
 
   def show
     # to do: be able to show a single boat and its job or availability
-    @job = Job.find_by(name: params[:name])
-    @jobs = Job.first
+    @job = Job.find(params[:id])
     puts @job
   end
 
@@ -48,10 +51,23 @@ class JobsController < ApplicationController
     redirect_to '/jobs'
   end
 
-  private
 
-  def job_params
+def check
+@origin = params[:origin]
+   
+@boats = Boat.where(location: @origin)
+respond_to do |format|
+    format.html
+    format.json {render json: @boats}
+  end
+
+end
+
+
+private
+
+def job_params
   	params.require(:job).permit(:name, :description, :origin, :destination, :container, :price)
   end
-  
+
 end

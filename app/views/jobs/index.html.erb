@@ -6,14 +6,14 @@
 <% if !@job.empty? %>
 <%=link_to 'Add new', new_job_path(), :class=>"btn-success btn btn-github" %><br><br>
 	<h2>All Jobs</h2>
-	<% @jobs.reverse.each do |b|%>
-		Name: <%= b.name %> <br>
-		Description: <%= b.description %> <br>
-		Origin: <%= b.origin %> <br>
-		Destination: <%= b.destination %> <br>
-		Container Count: <%= b.container %> <br>
-		Price: $<%= b.price %> <br/><br/>
-		<a class="btn-success btn btn-github" href="/jobs/<%= b.id%>">View Job</a><br><br>
+	<% @jobs.reverse.each do |j|%>
+		Name: <%= j.name %> <br>
+		Description: <%= j.description %> <br>
+		Origin: <%= j.origin %> <br>
+		Destination: <%= j.destination %> <br>
+		Container Count: <%= j.container %> <br>
+		Price: <%= j.price %> <br/><br/>
+		<a class="btn-success btn btn-github" href="/jobs/<%= j.id%>">View Job</a><br><br>
 	<% end %>
 <% else %>
 		<h4>You have not logged any jobs</h4>
@@ -21,9 +21,6 @@
 		<%=link_to 'Add new', new_job_path(), :class=>"btn-success btn btn-github" %><br><br>
 		<h2>All Jobs</h2>
 	<% end %>
-
-
-
 <% else %>
 
 <h1>Error: You do not have access to view this page</h1>

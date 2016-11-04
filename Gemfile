@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'geocoder'
+# allows for the distance calculation
 gem 'devise'
 gem 'pry-rails'
 gem 'sprockets', '3.6.3'

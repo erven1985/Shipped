@@ -9,4 +9,9 @@ class WelcomeController < ApplicationController
 
   end
 
+  def edit
+  	@user = current_user
+  	params[:id] = current_user.id
+  end
+
 end
