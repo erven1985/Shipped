@@ -95,18 +95,17 @@
           <ul class="nav navbar-nav pull-right">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="field" id="email_login">
-                <%= f.label :email, style: 'color: white;' %><br>
-                <%= f.email_field :email, autofocus: true %>
+                <%= f.label :email, autofocus: true %>: <br>
+                <%= f.email_field :email, autofocus: true, placeholder: "email" %>
               </div>
               <div class="field" id="password_login">
-                <%= f.label :password, style: 'color: white;' %><br>
-                <%= f.password_field :password, autocomplete: "off" %>
+                <%= f.label :password, autofocus: true %>: <br>
+                <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
               </div>
               <div class="actions" id="login_button">
-                <%= f.submit "Log in" %>
+                <%= f.submit "Log in", :class => 'btn btn-github' %>
               </div>
             <% end %>
-          <ul class="nav navbar-nav pull-right">
           </ul>
         </div>
       </div>
