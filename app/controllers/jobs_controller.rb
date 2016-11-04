@@ -38,6 +38,7 @@ class JobsController < ApplicationController
   def show
     # to do: be able to show a single boat and its job or availability
     @job = Job.find_by(name: params[:name])
+    @jobs = Job.first
     puts @job
   end
 
