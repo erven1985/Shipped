@@ -5,7 +5,14 @@ class ApplicationController < ActionController::Base
   before_filter :jobt
 
 	def jobt
-		@last = Job.last(3)
+    
+		if current_user
+
+
+    @lastjob = Job.where(user_id: current_user.id)
+    @lastboat = Boat.where(user_id: current_user.id)
+    end
+     
 	end
 
 
