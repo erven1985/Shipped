@@ -6,9 +6,15 @@ Rails.application.routes.draw do
 	
 	get '/'          => 'welcome#index',  as: 'root_user'
 	get '/users/:id' => 'welcome#show', 	as: 'user_profile'
-	get 'jobs/:name' => 'jobs#show' 
+	get 'jobs/personal/:name' => 'jobs#show' 
 
 	resources :boats
 	resources :jobs
 
+    resources :jobs do
+
+    member do
+        get 'check'
+    end
+end
 end

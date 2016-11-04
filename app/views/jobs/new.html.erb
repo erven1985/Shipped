@@ -1,4 +1,12 @@
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 <% if current_user.user_type == "Job" %>
+
 
 
 <h1><%=@message%></h1>
@@ -11,20 +19,78 @@
 		<%= f.label :description %>: <br>
 		<%= f.text_field :description %> <br>
 		<%= f.label :origin %>: <br>
-		<%= f.select :origin, [["Thor's Well, Oregon, USA", "Thor's Well, Oregon, USA"], ["The Bermuda Triangle, North Atlantic Ocean", "The Bermuda Triangle, North Atlantic Ocean"], ["Whale Bone Alley, Siberia", "Whale Bone Alley, Siberia"], ["The Giant's Causeway, Northern Ireland", "The Giant's Causeway, Northern Ireland"], ["Hvitserkur, Northern Iceland", "Hvitserkur, Northern Ireland"], ["Algarve, Portugal", "Algarve, Portugal"], ["Rio de Janiero, Brazil", "Rio de Janeiro, Brazil"], ["Galapagos Islands, Ecuador", "Galapagos Islands, Ecuador"], ["Queensland, Australia", "Queensland, Australia"], ["Benoa (Bali), Indonesia", "Benoa (Bali), Indonesia"], ["New York, NY, USA", "New York, NY, USA"], ["New Haven, CT, USA", "New Haven, CT, USA"]] %> <br>
+		<%= f.select :origin, [["Thor's Well, Oregon, USA", "Thor's Well, Oregon, USA"], ["The Bermuda Triangle, North Atlantic Ocean", "The Bermuda Triangle, North Atlantic Ocean"], ["Whale Bone Alley, Siberia", "Whale Bone Alley, Siberia"], ["The Giant's Causeway, Northern Ireland", "The Giant's Causeway, Northern Ireland"], ["Hvitserkur, Northern Iceland", "Hvitserkur, Northern Ireland"], ["Algarve, Portugal", "Algarve, Portugal"], ["Rio de Janiero, Brazil", "Rio de Janeiro, Brazil"], ["Galapagos Islands, Ecuador", "Galapagos Islands, Ecuador"], ["Queensland, Australia", "Queensland, Australia"], ["Benoa (Bali), Indonesia", "Benoa (Bali), Indonesia"], ["New York, NY, USA", "New York, NY, USA"], ["New Haven, CT, USA", "New Haven, CT, USA"]], {}, :id => "locale"  %> <br>
 		<%= f.label :destination %>: <br>
 		<%= f.select :destination, [["Thor's Well, Oregon, USA", "Thor's Well, Oregon, USA"], ["The Bermuda Triangle, North Atlantic Ocean", "The Bermuda Triangle, North Atlantic Ocean"], ["Whale Bone Alley, Siberia", "Whale Bone Alley, Siberia"], ["The Giant's Causeway, Northern Ireland", "The Giant's Causeway, Northern Ireland"], ["Hvitserkur, Northern Iceland", "Hvitserkur, Northern Ireland"], ["Algarve, Portugal", "Algarve, Portugal"], ["Rio de Janiero, Brazil", "Rio de Janeiro, Brazil"], ["Galapagos Islands, Ecuador", "Galapagos Islands, Ecuador"], ["Queensland, Australia", "Queensland, Australia"], ["Benoa (Bali), Indonesia", "Benoa (Bali), Indonesia"], ["New York, NY, USA", "New York, NY, USA"], ["New Haven, CT, USA", "New Haven, CT, USA"]] %> <br>
 		<%= f.label :container %>: <br>
 		<%= f.text_field :container %> <br>
 		<%= f.label :price %>: <br>
 		<%= f.text_field :price %> <br>
+		<%= hidden_field_tag 'selected', 'none', :id => "hidden"  %>
 	</div>
-		<%= f.submit "Create New Job" %>
+		<%= f.submit "Create New Job" , :id => 'submit_job' %>
 	<% end %>
+
+
+<button id="target">Submit</button>
+<form id = optjob>
+<label for="select_boat">Select a Boat</label>
+<select class="sel">
+  
+
+</select>
+</form>
+
+<script>
+
+$(document).ready(function() {
+$("#target").click(function() {
+var option = $("#locale").val()
+var arr = []
+$.ajax({
+  type:"GET",
+  url: "<%= check_job_path(current_user.id) %>",
+  dataType:"json",
+  data: {origin: option},
+  success:function(result){
+   for(i = 0; i<result.length;i++) {
+   		Object.keys(result[i]).forEach(function(c) {
+		if(c == "name"){
+    	var select = {val: i + 1, text: result[i][c]}
+    	arr.push(select);
+			}
+		});
+	}
+
+$(".formField").hide();
+$("#target").hide();
+$("#submit_job").show();
+$("#optjob").show();
+$('#hidden').val(arr[0].text);
+
+$(arr).each(function() {
+ $('.sel').append($("<option>").attr('value',this.text).text(this.text).attr("name", "name"));
+			});
+		}//success bracket close
+	}); //Ajax bracket close
+}); //target/click bracket close
+
+$('select').on('change', function (e) {
+    var optionSelected = $("option:selected", this);
+    var val = this.value
+    alert(val);
+    alert($('#hidden').val())
+    $('#hidden').val(val) 
+    alert($('#hidden').val())
+    
+	});
+});// document/ready bracket close
+</script>
 
 <% else %>
 
 <h1>Error: You do not have access to view this page</h1>
 
 <% end %>
+
 
