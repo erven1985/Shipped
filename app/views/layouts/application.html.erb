@@ -115,24 +115,31 @@
         <div class="col-lg-3">
           <div class="well sidebar-nav text-center jobsy">
             <!-- <h3>Recent jobs</h3> -->
-          <%if !@lastjob %>
+          
+        <% if user_signed_in? %>
+          <%if current_user.user_type == "Job" %>
             <ul class="nav nav-list">
-            <li class="nav-header joberugen">Recent Jobs</li>
+            <li class="nav-header joberugen">My Recent Jobs</li>
               <%@lastjob.reverse.each do |l| %>
-              <li class="jobery" style="color: #000000"><%= link_to l.name, '/jobs/'+(l.id).to_s  %></li>
+                <li class="jobery" style="color: #000000"><%= link_to l.name, '/jobs/'+(l.id).to_s  %></li>
+                </ul><br/>
+                <a href="/jobs"><button class="btn jobsy-more">View More</button></a>
               <%end%>
-            </ul><br/>
-            <a href="/jobs"><button class="btn jobsy-more">View More</button></a>
-            <%else%>
+            <%else%> 
             <ul class="nav nav-list">
-            <li class="nav-header joberugen">Recent Boats</li>
-              <%@lastjob.reverse.each do |l| %>
+            <li class="nav-header joberugen">My Recent Boats</li>
+              <%@lastboat.reverse.each do |l| %>
               <li class="jobery" style="color: #000000"><%= link_to l.name, '/boats/'+(l.id).to_s  %></li>
+              </ul><br/>
+              <a href="/boats"><button class="btn jobsy-more">View More</button></a>
               <%end%>
-      
-            </ul><br/>
-            <a href="/boats"><button class="btn jobsy-more">View More</button></a>
-          <%end%>
+            <%end%>
+        <%else%>
+            <ul class="nav nav-list">
+            <li class="nav-header joberugen">Please Login to View Jobs or Boats</li>
+            </ul>
+        <%end%>
+
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
