@@ -14,6 +14,9 @@
     <%= f.text_field :dob, autofocus: true %> <br>
     <%= f.label "Gender" %>:
     <%= f.text_field :gender, autofocus: true %> <br>
+    <%= f.label "What do you need?" %>:
+     <%= f.select :user_type,[["Shipping"],["Job"]], autofocus:true %> <br>
+
   </div>
   <div class="field">
     <%= f.label :email %>:
