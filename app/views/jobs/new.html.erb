@@ -1,8 +1,13 @@
+
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<% if current_user.user_type == "Job" %>
+
+
 
 <h1><%=@message%></h1>
 
@@ -17,7 +22,7 @@
 		<%= f.select :origin, [["Thor's Well, Oregon, USA", "Thor's Well, Oregon, USA"], ["The Bermuda Triangle, North Atlantic Ocean", "The Bermuda Triangle, North Atlantic Ocean"], ["Whale Bone Alley, Siberia", "Whale Bone Alley, Siberia"], ["The Giant's Causeway, Northern Ireland", "The Giant's Causeway, Northern Ireland"], ["Hvitserkur, Northern Iceland", "Hvitserkur, Northern Ireland"], ["Algarve, Portugal", "Algarve, Portugal"], ["Rio de Janiero, Brazil", "Rio de Janeiro, Brazil"], ["Galapagos Islands, Ecuador", "Galapagos Islands, Ecuador"], ["Queensland, Australia", "Queensland, Australia"], ["Benoa (Bali), Indonesia", "Benoa (Bali), Indonesia"], ["New York, NY, USA", "New York, NY, USA"], ["New Haven, CT, USA", "New Haven, CT, USA"]], {}, :id => "locale"  %> <br>
 		<%= f.label :destination %>: <br>
 		<%= f.select :destination, [["Thor's Well, Oregon, USA", "Thor's Well, Oregon, USA"], ["The Bermuda Triangle, North Atlantic Ocean", "The Bermuda Triangle, North Atlantic Ocean"], ["Whale Bone Alley, Siberia", "Whale Bone Alley, Siberia"], ["The Giant's Causeway, Northern Ireland", "The Giant's Causeway, Northern Ireland"], ["Hvitserkur, Northern Iceland", "Hvitserkur, Northern Ireland"], ["Algarve, Portugal", "Algarve, Portugal"], ["Rio de Janiero, Brazil", "Rio de Janeiro, Brazil"], ["Galapagos Islands, Ecuador", "Galapagos Islands, Ecuador"], ["Queensland, Australia", "Queensland, Australia"], ["Benoa (Bali), Indonesia", "Benoa (Bali), Indonesia"], ["New York, NY, USA", "New York, NY, USA"], ["New Haven, CT, USA", "New Haven, CT, USA"]] %> <br>
-		<%= f.label :contianer %>: <br>
+		<%= f.label :container %>: <br>
 		<%= f.text_field :container %> <br>
 		<%= f.label :price %>: <br>
 		<%= f.text_field :price %> <br>
@@ -25,6 +30,7 @@
 	</div>
 		<%= f.submit "Create New Job" , :id => 'submit_job' %>
 	<% end %>
+
 
 <button id="target">Submit</button>
 <form id = optjob>
@@ -80,3 +86,11 @@ $('select').on('change', function (e) {
 	});
 });// document/ready bracket close
 </script>
+
+<% else %>
+
+<h1>Error: You do not have access to view this page</h1>
+
+<% end %>
+
+

@@ -1,22 +1,20 @@
 class JobsController < ApplicationController
 
-
-def index
-   # to do: display all jobs 
-  @jobs = Job.all
-  @user = User.find(current_user.id)
-  @job = @user.jobs
-
-  # if @job != nil
-  #   # @job_current = Job.find(params[:job_id])
-  # end
-  	
-  @jobs = Job.where(user_id: current_user.id)
- end
+  def index
+     # to do: display all jobs 
+    @jobs = Job.all
+    @user = User.find(current_user.id)
+    @job = @user.jobs
+    # if @job != nil
+    #   # @job_current = Job.find(params[:job_id])
+    # end
+    @jobs = Job.where(user_id: current_user.id)
+  end
 
   def new
-   @job = Job.new
+    @job = Job.new
   end
+
 
 def create
  @boat = Boat.find_by(name: params[:selected])
@@ -30,30 +28,31 @@ def create
   end
 end
 
- def edit
-   @job = Job.find(params[:id])
+
+  def edit
+    @job = Job.find(params[:id])
   end
 
   def update
-   @user = User.find_by_id(current_user.id)
+    @user = User.find_by_id(current_user.id)
     @job = Job.find(params[:id]).update(job_params)
-       redirect_to url_for(:controller => :jobs, :action => :index)
+    redirect_to url_for(:controller => :jobs, :action => :index)
   end
 
   def show
-   # to do: be able to show a single boat and its job or availability
-   @job = Job.find(params[:id])
+    # to do: be able to show a single boat and its job or availability
+    @job = Job.find_by(name: params[:name])
+    puts @job
+  end
 
- end
-
- def destroy
-  @job = Job.find(params[:id])
-  @job.destroy
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
     redirect_to '/jobs'
   end
 
 
-  def check
+def check
 @origin = params[:origin]
    
 @boats = Boat.where(location: @origin)
@@ -62,16 +61,13 @@ respond_to do |format|
     format.json {render json: @boats}
   end
 
-
 end
 
 
 private
 
-
-  def job_params
+def job_params
   	params.require(:job).permit(:name, :description, :origin, :destination, :container, :price)
   end
 
 end
-
