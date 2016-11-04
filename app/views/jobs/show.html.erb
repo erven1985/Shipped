@@ -1,10 +1,4 @@
-
-
 <% if current_user.user_type == "Job" %>
-
-<% if @job.nil? %>
-<h1>You are worthless.</h1>
-<% else %>
 <div class="showField">
 	Name: <%= @job.name %><br>
 	Description: <%= @job.description %><br>
@@ -15,7 +9,6 @@
 	<%=link_to 'Edit', edit_job_path(params[:name]), :class=>"btn-success btn btn-github" %>
 	<%= link_to 'Delete',  { action: :destroy, id: @job.id }, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-success btn btn-github" %>
 </div>
-<% end %>
 
 <% else %>
 
