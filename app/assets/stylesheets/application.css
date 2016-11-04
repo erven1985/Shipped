@@ -18,6 +18,21 @@
 body {
   background-color: #fdfffc;
 }
+#email_login {
+  position: absolute;
+  left: 61%;
+}
+
+#password_login {
+  position: absolute;
+  left: 75%;
+}
+
+#login_button {
+  position: absolute;
+  left: 89%;
+  top: 36px;
+}
 .nav.navbar-nav li a {
   font-family: 'Roboto', sans-serif;
   color: #bababa;
@@ -69,6 +84,8 @@ body {
   background-repeat: no-repeat;
 }
 .footer-bar {
+  padding-top: 0;
+  padding-bottom: 0;
   background-color: #2c4251;
 }
 .btn-github {
@@ -96,20 +113,3 @@ body {
     color: #ffffff;
     background-color: #00b3db;
 }
-
-#email_login {
-  position: absolute;
-  left: 61%;
-}
-
-#password_login {
-  position: absolute;
-  left: 75%;
-}
-
-#login_button {
-  position: absolute;
-  left: 89%;
-  top: 36px;
-}
-
