@@ -42,6 +42,7 @@ end
   def show
     # to do: be able to show a single boat and its job or availability
     @job = Job.find(params[:id])
+    @job_boat = @job.boats
     puts @job
   end
 
