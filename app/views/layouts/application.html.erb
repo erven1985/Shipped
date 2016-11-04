@@ -92,21 +92,13 @@
         </button>
         <a class="navbar-brand" style="font-size: 28px; color: #ffffff; font-family: 'Roboto', sans-serif;" href="/">mybib</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav pull-right">
+          <div class="pull-right nav-login">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="field" id="email_login">
-                <%= f.label :email, autofocus: true %>: <br>
-                <%= f.email_field :email, autofocus: true, placeholder: "email" %>
-              </div>
-              <div class="field" id="password_login">
-                <%= f.label :password, autofocus: true %>: <br>
-                <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
-              </div>
-              <div class="actions" id="login_button">
-                <%= f.submit "Log in", :class => 'btn btn-github' %>
-              </div>
+              <%= f.email_field :email, autofocus: true, placeholder: "E-mail" %>
+              <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+              <%= f.submit "Login", :class => 'btn btn-github' %>
             <% end %>
-          </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -137,7 +129,7 @@
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
-      <div class="navbar navbar-default navbar-fixed-bottom footer-bar">
+      <div class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
           <p class="navbar-text pull-left" style="color: white; font-family: 'Roboto', sans-serif;">© mybib Corp. 1872-2016
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="cc">Terms and Conditions</a>
