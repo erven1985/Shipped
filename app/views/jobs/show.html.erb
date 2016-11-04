@@ -1,4 +1,9 @@
+
 <% content_for :title, "Job - [" + @job.name + "]"%>
+
+<% if current_user.user_type == "Job" %>
+
+
 <div class="showField">
 	Name: <%= @job.name %><br>
 	Description: <%= @job.description %><br>
@@ -6,6 +11,14 @@
 	Destination: <%= @job.destination %> <br>
 	Container Count: <%= @job.container %> <br>
 	Price: <%= @job.price %> <br><br>
-	<%=link_to 'Edit', edit_job_path(params[:id]), :class=>"btn-success btn btn-github" %>
+	<%=link_to 'Edit', edit_job_path(params[:name]), :class=>"btn-success btn btn-github" %>
 	<%= link_to 'Delete',  { action: :destroy, id: @job.id }, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-success btn btn-github" %>
 </div>
+
+<% else %>
+
+<h1>Error: You do not have access to view this page</h1>
+
+<% end %>
+
+

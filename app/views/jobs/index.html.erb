@@ -1,5 +1,8 @@
 
+<% if current_user.user_type == "Job" %>
+
 <h2>Available Jobs</h2>
+
 <% if !@job.empty? %>
 <%=link_to 'Add new', new_job_path(), :class=>"btn-success btn btn-github" %><br><br>
 	<h2>All Jobs</h2>
@@ -14,6 +17,16 @@
 	<% end %>
 <% else %>
 		<h4>You have not logged any jobs</h4>
+
 		<%=link_to 'Add new', new_job_path(), :class=>"btn-success btn btn-github" %><br><br>
 		<h2>All Jobs</h2>
 	<% end %>
+
+<% end %>
+
+<% else %>
+
+<h1>Error: You do not have access to view this page</h1>
+
+<% end %>
+

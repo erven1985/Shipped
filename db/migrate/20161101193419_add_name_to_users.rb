@@ -5,5 +5,7 @@ class AddNameToUsers < ActiveRecord::Migration[5.0]
     add_column :users, :username, :string
     add_column :users, :dob, :string
     add_column :users, :gender, :string
+    add_column :users, :user_type, :string
   end
+
 end

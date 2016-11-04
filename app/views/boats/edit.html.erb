@@ -1,3 +1,4 @@
+<% if current_user.user_type == "Shipping" %>
 
 	<h2> Update your information: </h2>
 	
@@ -16,4 +17,10 @@
 		<%= f.submit "Update Boat" %>
 	<% end %>
 </div>
+
+<% else %>
+
+	<h1>Error: You do not have access to view this page</h1>
+
+<% end %>
 
