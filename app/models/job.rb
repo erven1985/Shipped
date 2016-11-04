@@ -6,4 +6,5 @@ belongs_to :user
 geocoded_by :destination
  	after_validation :geocode
 
+validates :price, length: {in: 4...100}
 end
