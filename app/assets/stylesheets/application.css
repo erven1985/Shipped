@@ -21,17 +21,20 @@ body {
 #email_login {
   position: absolute;
   left: 61%;
+  color: white;
 }
 
 #password_login {
   position: absolute;
   left: 75%;
+  color: white;
 }
 
 #login_button {
   position: absolute;
   left: 89%;
-  top: 36px;
+  top: 28px;
+
 }
 .nav.navbar-nav li a {
   font-family: 'Roboto', sans-serif;
