@@ -4,18 +4,17 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label "First Name" %>:
+    <%= f.label "First Name" %>: 
     <%= f.text_field :firstname, autofocus: true %> <br>
-    <%= f.label "Last Name" %>:
+    <%= f.label "Last Name" %>: 
     <%= f.text_field :lastname, autofocus: true %> <br>
-    <%= f.label "Username" %>:
+    <%= f.label "Username" %>: 
     <%= f.text_field :username, autofocus: true %> <br>
     <%= f.label "DOB" %>:
     <%= f.text_field :dob, autofocus: true %> <br>
-    <%= f.label "Gender" %>:
+    <%= f.label "Gender" %>: 
     <%= f.text_field :gender, autofocus: true %> <br>
-    <%= f.label "What do you need?" %>:
-    <%= f.select :user_type,[["Shipping"],["Job"]] autofocus:true %> <br>
+    
   </div>
 
   <div class="field">
@@ -42,7 +41,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(enter your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
@@ -53,6 +52,6 @@
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy with your experience? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
