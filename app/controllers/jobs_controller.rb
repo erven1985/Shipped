@@ -41,8 +41,21 @@ end
 
   def show
     # to do: be able to show a single boat and its job or availability
+    
+  
+
+
+  if Job.find(params[:id])
     @job = Job.find(params[:id])
+
+# @job = @j.select {|x| x.id == 1}
+   @job_boat = @job.boats
     puts @job
+    @boat = Boat.where(user_id: current_user.id)
+   
+ else
+  redirect_to '/jobs'
+end
   end
 
   def destroy

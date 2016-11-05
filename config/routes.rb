@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   
   devise_for :users
 	
+
 	get '/'          => 'welcome#index',  as: 'root_user'
 	get '/users/:id' => 'welcome#show', 	as: 'user_profile'
 	get 'jobs/personal/:name' => 'jobs#show' 
+
 
 	resources :boats
 	resources :jobs

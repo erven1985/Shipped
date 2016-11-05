@@ -11,3 +11,31 @@
 	left: 500px;
 	top: 200px;
 }
+
+.shadowStyle{
+	border: 1px solid lightgrey;
+	padding-top: 20px;
+	padding: 60px;
+	width: 600px;
+	height: 500px;
+	margin-top: 70px;
+	margin: 0 auto;
+	box-shadow: 0 0 1em lightgrey;
+	text-align:center;
+
+}
+
+.formFields{
+margin: 0 auto;
+}
+
+.pageTitle{
+	text-decoration: underline;
+}
+#indexTitle{
+	text-decoration: underline;
+}
+#editUserShow{
+	text-align: center;
+}
+

@@ -18,6 +18,39 @@
 body {
   background-color: #fdfffc;
 }
+
+#editUser{
+  text-align: center;
+  padding: 10px;
+/*  display: inline;*/
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 1em lightgrey;
+  margin: 0 auto;
+  width: 450px;
+  margin-top: 25px;
+
+}
+.editUserTitle{
+  text-align: center;
+  text-decoration: underline;
+}
+
+.profileEditTitle{
+  text-align: center;
+  text-decoration: underline;
+}
+
+.cancelUser{
+  text-align: center;
+  border: 1px lightgrey solid;
+  box-shadow: 0 0 1em lightgrey;
+  width: 275px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+}
+
+
 #email_login {
   position: absolute;
   left: 61%;
