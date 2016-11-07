@@ -1,24 +1,11 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<p align="center">
+    <img alt="Shipped Group Project" src="http://i.cubeupload.com/jBrrUt.png" width="568">
+</p>
+---
+## If you want to check it out
+- Open **terminal**
+- **cd** into the folder (**"cd Desktop"**, **"cd Shipped_Group_project"**)
+- Type **"bundle install"** (this will install the **rubygems** needed to make this website work)
+- Type **"rails server"** to run the server (**localhost:3000**)
+- Go to **http://localhost:3000/**
+- Enjoy!

@@ -1,6 +1,7 @@
 
 <% if current_user.user_type == "Job" %>
 <div class="showField">
+	<%if(@job)%>
 	Name: <%= @job.name %><br>
 	Description: <%= @job.description %><br>
 	Origin: <%= @job.origin %><br>
@@ -11,15 +12,20 @@
  Boat chosen: <%= boat.name %> <br><br>
  Container capacity: <%= boat.container %> <br><br>
  <%= image_tag boat.avatar.url(:thumb) %><br><br>
+Distance: <%= Geocoder::Calculations.distance_between([boat.latitude, boat.longitude], [@job.latitude,@job.longitude]).round(2) %> miles <br><br>
 <% end %>
+<%end%>
 	<%=link_to 'Edit', edit_job_path(params[:id]), :class=>"btn-success btn btn-github" %>
 	<%= link_to 'Delete',  { action: :destroy, id: @job.id }, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-success btn btn-github" %>
 </div>
 
 <% else %>
 
-<h1>Error: You do not have access to view this page</h1>
+<%if @boat %>
+<%@boat.reverse.each do |b|%>
 
+<h1> <%=b.name %> </h1>
+<%end%>
 <% end %>
-
+<%end%>
 
