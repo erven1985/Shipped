@@ -122,20 +122,19 @@
                 <li class="nav-header joberugen">My Recent Jobs</li>
               <%@lastjob.reverse.each do |l| %>
                 <li class="jobery" style="color: #000000"><%= link_to l.name, '/jobs/'+(l.id).to_s  %></li>
-
-                </ul><br/>
+            <br/>
               <%end%>
-              <a href="/jobs"><button class="btn jobsy-more">View More</button></a>
+            </ul>
+                 <a href="/jobs"><button class="btn jobsy-more">View More</button></a>
             <%else%> 
             <ul class="nav nav-list">
                 <li class="nav-header joberugen">My Recent Boats</li>
-                <%@lastboat.reverse.each do |l| %>
-                <li class="jobery" style="color: #000000"><%= link_to l.name, '/boats/'+(l.id).to_s %>
-                </li>
-            </ul><br/>
+              <%@lastboat.reverse.each do |l| %>
+                <li class="jobery" style="color: #000000"><%= link_to l.name, '/boats/'+(l.id).to_s  %></li>
+            <br/>
               <%end%>
-              <a href="/boats"><button class="btn jobsy-more">View More</button></a>
-
+            </ul>
+               <a href="/boats"><button class="btn jobsy-more">View More</button></a>
             <%end%>
         <%else%>
             <ul class="nav nav-list">
