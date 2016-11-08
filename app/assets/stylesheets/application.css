@@ -17,6 +17,7 @@
 
 body {
   background-color: #fdfffc;
+  
 }
 
 #editUser{
@@ -74,6 +75,7 @@ body {
 .nav.navbar-nav li a {
   font-family: 'Roboto', sans-serif;
   color: #bababa;
+
 }
 .nav.navbar-nav li a:hover {
   color: #ffffff
@@ -107,7 +109,10 @@ body {
   font-family: 'Roboto', sans-serif;
   border: 1px solid #e7e7e7;
   background-color: #ffffff;
+  list-style-type: none;
 }
+
+
 .slogan {
   font-family: 'Roboto', sans-serif;
   font-size: 64px;
