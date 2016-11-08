@@ -119,9 +119,10 @@
         <% if user_signed_in? %>
           <%if current_user.user_type == "Job" %>
             <ul class="nav nav-list">
-            <li class="nav-header joberugen">My Recent Jobs</li>
+                <li class="nav-header joberugen">My Recent Jobs</li>
               <%@lastjob.reverse.each do |l| %>
                 <li class="jobery" style="color: #000000"><%= link_to l.name, '/jobs/'+(l.id).to_s  %></li>
+
                 </ul><br/>
               <%end%>
               <a href="/jobs"><button class="btn jobsy-more">View More</button></a>
@@ -134,11 +135,11 @@
             </ul><br/>
               <%end%>
               <a href="/boats"><button class="btn jobsy-more">View More</button></a>
-              
+
             <%end%>
         <%else%>
             <ul class="nav nav-list">
-            <li class="nav-header joberugen">Please Login to View Jobs or Boats</li>
+            <li class="nav-header joberugen">Please Login to View Jobs or Boat</li>
             </ul>
         <%end%>
 
