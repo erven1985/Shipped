@@ -110,6 +110,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pg (0.19.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -213,6 +214,7 @@ DEPENDENCIES
   less-rails
   listen (~> 3.0.5)
   paperclip (~> 5.0.0)
+  pg
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
