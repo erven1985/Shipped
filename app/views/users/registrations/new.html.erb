@@ -17,7 +17,7 @@
     <%= f.text_field :dob, autofocus: true, placeholder: 'mm/dd/yyyy' %> <br>
     <%= f.label "Gender" %>:
     <%= f.text_field :gender, autofocus: true %> <br>
-    <%= f.label "What do you need?" %>:
+    <%= f.label "Type" %>:
      <%= f.select :user_type,[["Shipping"],["Job"]], autofocus:true %> <br>
 
   </div>
@@ -28,10 +28,7 @@
 
   <div class="field">
     <%= f.label "Password" %>:
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "6 character minimum" %>
   </div>
 
   <div class="field">

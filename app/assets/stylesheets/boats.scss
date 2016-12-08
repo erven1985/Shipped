@@ -5,6 +5,7 @@
 	position:absolute;
 	top: -20px;
 	left: 300px;
+	padding-top: 10px;
 }
 .formFields{
 	border: 1px solid lightgrey;
@@ -27,3 +28,7 @@
 	display: inline-block;
 }
 .indexForm {}
+
+#widen{
+	height: 300px;
+}

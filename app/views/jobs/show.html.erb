@@ -2,7 +2,7 @@
 <% if current_user.user_type == "Job" %>
 <div class="showField">
 	<%if(@job)%>
-	Name: <%= @job.name %><br>
+	Job Title: <%= @job.name %><br>
 	Description: <%= @job.description %><br>
 	Origin: <%= @job.origin %><br>
 	Destination: <%= @job.destination %> <br>

@@ -6,48 +6,52 @@
 
   <div class="field">
     <%= f.label "First Name" %>: 
-    <%= f.text_field :firstname, autofocus: true %> <br>
+    <%= f.text_field :firstname, autofocus: true, :class => 'insertField' %> <br>
     <%= f.label "Last Name" %>: 
-    <%= f.text_field :lastname, autofocus: true %> <br>
+    <%= f.text_field :lastname, autofocus: true, :class => 'insertField' %> <br>
     <%= f.label "Username" %>: 
-    <%= f.text_field :username, autofocus: true %> <br>
+    <%= f.text_field :username, autofocus: true, :class => 'insertField' %> <br>
     <%= f.label "DOB" %>:
-    <%= f.text_field :dob, autofocus: true %> <br>
+    <%= f.text_field :dob, autofocus: true, :class => 'insertField' %> <br>
     <%= f.label "Gender" %>: 
-    <%= f.text_field :gender, autofocus: true %> <br>
+    <%= f.text_field :gender, autofocus: true, :class => 'insertField' %> <br>
     
   </div>
 
   <div class="field">
     <%= f.label :email %>:
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, :class => 'insertField' %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+  <div id="passwordChange">
+    <h5 class="minimize"> Would you like to change your password? </h5>
+      <h6 class="minimize"> If not, leave the next two fields blank.</h6>
+    <div class="field">
+      <%= f.label :password %>:
+      <%= f.password_field :password, autocomplete: "off", :class => 'insertField' %>
+      <% if @minimum_password_length %>
+        <br />
+        <em id="small"><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>: <br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation, :class => 'expand' %>: 
+      <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'insertField' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>: <br>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %><i> (enter current password to confirm changes):</i> <br>
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit "Update", :class => 'btn btn-github' %>
+    <h5> Please enter your current password to confirm your changes.</h5>
+    <div class="field">
+      <%= f.label :current_password, :class => 'expand' %>: 
+      <%= f.password_field :current_password, autocomplete: "off", :class => 'insertField' %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "Update", :class => 'btn btn-github' %>
+    </div>
   </div>
 <% end %>
 </div>
