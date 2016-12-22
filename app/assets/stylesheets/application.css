@@ -27,10 +27,50 @@ body {
   border: 1px solid lightgrey;
   box-shadow: 0 0 1em lightgrey;
   margin: 0 auto;
-  width: 450px;
+  width: 550px;
   margin-top: 25px;
+  padding-bottom: 15px;
+}
+
+.field{
+  text-align: center;
+}
+
+.field label{
+  width: 110px;
+  text-align: right;
+  display: inline-block;
+}
+
+.insertField{
+  width: 200px;
+  text-align: center;
+  display: inline-block;
+}
+.insertFieldP{
 
 }
+
+#greyText{
+  padding-left: 10px;
+}
+
+.field .expand{
+  width: 170px;
+}
+
+.minimize{
+  color: grey;
+  font-style: italic;
+  font-size: 80%;
+}
+
+#small{
+  font-size: 70%;
+  padding-left: 10px
+}
+
+
 .editUserTitle{
   text-align: center;
   text-decoration: underline;

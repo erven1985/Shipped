@@ -7,7 +7,7 @@
 <%=link_to 'Add new', new_job_path(), :class=>"btn-success btn btn-github" %><br><br>
 	<h2>All Jobs</h2>
 	<% @jobs.reverse.each do |j|%>
-		Name: <%= j.name %> <br>
+		Job Title: <%= j.name %> <br>
 		Description: <%= j.description %> <br>
 		Origin: <%= j.origin %> <br>
 		Destination: <%= j.destination %> <br>
